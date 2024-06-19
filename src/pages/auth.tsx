@@ -108,7 +108,7 @@ const Auth = () => {
                 className=" text-white hover:underline"
                 onClick={() => toggleAuth("signin")}
               >
-                Tizimga kirish
+                enter enter
               </button>
             </div>
           )}
