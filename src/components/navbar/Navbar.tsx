@@ -9,7 +9,7 @@ import NavMenu from '../nav-menu/nav-menu';
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const { logout } = useAuth();
-
+	const [search, setSearch] = useState('')
 	useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY > 0) {
@@ -18,25 +18,21 @@ const Navbar = () => {
 				setScrolled(false);
 			}
 		};
-
 		window.addEventListener('scroll', handleScroll);
-
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
 	return (
 		<header className={`${scrolled && 'bg-[#141414] shadow-lg'}`}>
 			<div className='flex items-center space-x-2 md:space-x-10'>
-      <Image
-          src={"/Animate.svg"}
-          alt="logo"
-          width={56}
-          height={56}
-          className="object-contain cursor-pointer"
-        />
-
+				<Image
+					src={"/Animate.svg"}
+					alt="logo"
+					width={56}
+					height={56}
+					className="object-contain cursor-pointer"
+				/>
 				<NavMenu />
-
 				<ul className='space-x-4 md:flex hidden'>
 					<li className='navLink'>Home</li>
 					<li className='navLink'>Movies</li>
@@ -45,7 +41,6 @@ const Navbar = () => {
 					<li className='navLink'>Popular</li>
 				</ul>
 			</div>
-
 			<div className='flex items-center space-x-4 text-sm font-light'>
 				<AiOutlineSearch className='h-6 w-6 cursor-pointer' />
 				<p className='hidden lg:inline'>Kids</p>

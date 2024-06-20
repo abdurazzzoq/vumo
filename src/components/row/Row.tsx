@@ -23,8 +23,6 @@ const Row = ({ title, movies, isBig=false }: RowProps) => {
           if(direction === 'left' && scrollto === 0){
             setMove(false);
           }
-          
-        
     }
   };
 
